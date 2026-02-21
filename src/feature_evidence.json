@@ -1,0 +1,25 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-test-all-core-application-functionality-on-mainnet-including-onboarding-survey-quest-creation-completion-streak-tracking-skill-progression-boss-challenges-and-achievement-unlocking-to-ensure-localstorage-persistence-works-correctly-in-production",
+      "featureTitle": "Test all core application functionality on mainnet including onboarding survey, quest creation/completion, streak tracking, skill progression, boss challenges, and achievement unlocking to ensure localStorage persistence works correctly in production",
+      "files": [
+        "frontend/src/contexts/AppContext.tsx",
+        "frontend/src/pages/Dashboard.tsx",
+        "frontend/src/pages/OnboardingSurvey.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-25"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

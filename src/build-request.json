@@ -1,0 +1,118 @@
+{
+  "kind": "build_request",
+  "title": "Deploy application to Internet Computer mainnet",
+  "projectName": "Quest RPG",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "text": "Configure the project for mainnet deployment by ensuring dfx.json contains production-ready canister configurations with mainnet network settings",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Launch this online"
+        ]
+      },
+      "acceptanceCriteria": [
+        "dfx.json includes mainnet network configuration",
+        "Canister settings are optimized for production (cycles, memory allocation)",
+        "Frontend canister serves optimized production build"
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "text": "Build and deploy the backend canister (main.mo) to the Internet Computer mainnet with proper cycles funding",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Launch this online"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend canister is deployed and running on mainnet",
+        "Canister has sufficient cycles for operation",
+        "Canister ID is documented for frontend integration"
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Build the frontend application in production mode with environment variables pointing to mainnet backend canister, then deploy the optimized static assets to the Internet Computer frontend canister",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Launch this online"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Frontend is built with production optimizations (minification, tree-shaking)",
+        "Environment variables reference mainnet canister IDs",
+        "Frontend canister serves the application with proper asset certification",
+        "Application is accessible via public Internet Computer URL"
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Verify Internet Identity integration works correctly on mainnet by testing authentication flow with production Internet Identity canister",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Launch this online"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can authenticate using Internet Identity on mainnet",
+        "Authentication persists across sessions",
+        "useInternetIdentity hook connects to production II canister"
+      ]
+    },
+    {
+      "id": "REQ-25",
+      "text": "Test all core application functionality on mainnet including onboarding survey, quest creation/completion, streak tracking, skill progression, boss challenges, and achievement unlocking to ensure localStorage persistence works correctly in production",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Launch this online"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Onboarding survey completes and generates personalized quests",
+        "Quests can be created, edited, and marked complete",
+        "XP awards correctly and triggers rank progression",
+        "Streaks track properly across days",
+        "All localStorage operations function on mainnet",
+        "Achievements unlock at appropriate milestones"
+      ]
+    }
+  ],
+  "constraints": [
+    "Deployment must target Internet Computer mainnet, not local replica or testnets",
+    "Maintain single-actor backend architecture",
+    "Do not modify immutable frontend paths during deployment",
+    "Preserve all localStorage-based state management (no backend state migration required)"
+  ],
+  "nonGoals": [
+    "Backend data persistence (app uses localStorage exclusively)",
+    "Multi-canister architecture",
+    "Custom domain configuration",
+    "CDN or external hosting integration"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,68 @@
+import { Achievement } from '../types';
+
+export const INITIAL_ACHIEVEMENTS: Achievement[] = [
+  {
+    id: 'first-quest',
+    title: 'First Steps',
+    description: 'Complete your first quest',
+    iconPath: '/assets/generated/achievement-first-quest.dim_96x96.png',
+    criteria: 'complete_1_quest',
+    isUnlocked: false,
+  },
+  {
+    id: '7-day-streak',
+    title: 'Week Warrior',
+    description: 'Maintain a 7-day streak',
+    iconPath: '/assets/generated/achievement-7day.dim_96x96.png',
+    criteria: 'streak_7',
+    isUnlocked: false,
+  },
+  {
+    id: 'level-10',
+    title: 'Rising Star',
+    description: 'Reach level 10 in any skill',
+    iconPath: '/assets/generated/achievement-level10.dim_96x96.png',
+    criteria: 'skill_level_10',
+    isUnlocked: false,
+  },
+  {
+    id: '30-day-streak',
+    title: 'Dedication',
+    description: 'Maintain a 30-day streak',
+    iconPath: '/assets/generated/achievement-7day.dim_96x96.png',
+    criteria: 'streak_30',
+    isUnlocked: false,
+  },
+  {
+    id: 'first-boss',
+    title: 'Boss Slayer',
+    description: 'Complete your first boss challenge',
+    iconPath: '/assets/generated/achievement-first-quest.dim_96x96.png',
+    criteria: 'complete_1_boss',
+    isUnlocked: false,
+  },
+  {
+    id: 'all-skills-5',
+    title: 'Jack of All Trades',
+    description: 'Reach level 5 in all skills',
+    iconPath: '/assets/generated/achievement-level10.dim_96x96.png',
+    criteria: 'all_skills_5',
+    isUnlocked: false,
+  },
+  {
+    id: '100-quests',
+    title: 'Century',
+    description: 'Complete 100 quests',
+    iconPath: '/assets/generated/achievement-first-quest.dim_96x96.png',
+    criteria: 'complete_100_quests',
+    isUnlocked: false,
+  },
+  {
+    id: 'transcendent',
+    title: 'Transcendent One',
+    description: 'Reach the Transcendent rank',
+    iconPath: '/assets/generated/achievement-level10.dim_96x96.png',
+    criteria: 'rank_transcendent',
+    isUnlocked: false,
+  },
+];

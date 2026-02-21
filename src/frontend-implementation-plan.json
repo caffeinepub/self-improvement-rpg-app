@@ -1,0 +1,99 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Deploy Quest RPG to Internet Computer Mainnet - Frontend",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "summary": "Configure dfx.json for mainnet deployment with production-ready frontend canister settings",
+      "acceptanceCriteria": [
+        "dfx.json includes mainnet network configuration",
+        "Frontend canister serves optimized production build"
+      ],
+      "file_operations": [
+        {
+          "path": "dfx.json",
+          "operation": "modify",
+          "description": "Add mainnet network configuration with production hosts and ensure frontend canister configuration includes optimized build settings for asset certification and production deployment"
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Build frontend in production mode with mainnet environment variables and deploy optimized assets",
+      "acceptanceCriteria": [
+        "Frontend is built with production optimizations (minification, tree-shaking)",
+        "Environment variables reference mainnet canister IDs",
+        "Frontend canister serves the application with proper asset certification",
+        "Application is accessible via public Internet Computer URL"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/.env.production",
+          "operation": "create",
+          "description": "Create production environment file containing mainnet backend canister ID and Internet Identity canister ID for production deployment"
+        },
+        {
+          "path": "frontend/vite.config.ts",
+          "operation": "modify",
+          "description": "Ensure Vite configuration includes production optimizations including minification, tree-shaking, code splitting, and proper asset handling for Internet Computer deployment"
+        },
+        {
+          "path": "frontend/package.json",
+          "operation": "modify",
+          "description": "Add or verify deployment scripts for building production bundle and deploying to mainnet frontend canister with proper environment variable handling"
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Verify and configure Internet Identity integration for mainnet production environment",
+      "acceptanceCriteria": [
+        "Users can authenticate using Internet Identity on mainnet",
+        "Authentication persists across sessions",
+        "useInternetIdentity hook connects to production II canister"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useInternetIdentity.ts",
+          "operation": "modify",
+          "description": "Ensure the InternetIdentityProvider configuration uses production Internet Identity canister URL (https://identity.ic0.app) when deployed to mainnet, with proper delegation expiration and idle timeout settings for production use"
+        },
+        {
+          "path": "frontend/src/hooks/useActor.ts",
+          "operation": "modify",
+          "description": "Verify the useActor hook correctly references mainnet backend canister ID from environment variables and creates actor with production agent configuration"
+        }
+      ]
+    },
+    {
+      "id": "REQ-25",
+      "summary": "Verify all frontend functionality works on mainnet including onboarding, quest management, progression systems, and localStorage persistence",
+      "acceptanceCriteria": [
+        "Onboarding survey completes and generates personalized quests",
+        "Quests can be created, edited, and marked complete",
+        "XP awards correctly and triggers rank progression",
+        "Streaks track properly across days",
+        "All localStorage operations function on mainnet",
+        "Achievements unlock at appropriate milestones"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/AppContext.tsx",
+          "operation": "modify",
+          "description": "Add production environment checks and error handling for localStorage operations to ensure state persistence works correctly on mainnet, including fallback mechanisms if localStorage quota is exceeded"
+        },
+        {
+          "path": "frontend/src/pages/OnboardingSurvey.tsx",
+          "operation": "modify",
+          "description": "Verify onboarding flow completes successfully on mainnet and handles edge cases like network interruptions during quest generation, ensuring generated quests are properly saved to localStorage"
+        },
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Add production telemetry or console logging (removable post-verification) to track quest completion, XP awards, and streak updates for mainnet testing validation"
+        }
+      ]
+    }
+  ]
+}

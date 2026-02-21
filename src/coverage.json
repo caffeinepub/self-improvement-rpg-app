@@ -1,0 +1,83 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-21T12:30:43.300Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 5,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-21",
+        "summary": "Configure the project for mainnet deployment by ensuring dfx.json contains production-ready canister configurations with mainnet network settings",
+        "status": "missing",
+        "plannedFiles": [
+          "dfx.json"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Build and deploy the backend canister (main.mo) to the Internet Computer mainnet with proper cycles funding",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-23",
+        "summary": "Build the frontend application in production mode with environment variables pointing to mainnet backend canister, then deploy the optimized static assets to the Internet Computer frontend canister",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/.env.production",
+          "frontend/vite.config.ts",
+          "frontend/package.json"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-24",
+        "summary": "Verify Internet Identity integration works correctly on mainnet by testing authentication flow with production Internet Identity canister",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/hooks/useInternetIdentity.ts",
+          "frontend/src/hooks/useActor.ts"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-25",
+        "summary": "Test all core application functionality on mainnet including onboarding survey, quest creation/completion, streak tracking, skill progression, boss challenges, and achievement unlocking to ensure localStorage persistence works correctly in production",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/contexts/AppContext.tsx",
+          "frontend/src/pages/OnboardingSurvey.tsx",
+          "frontend/src/pages/Dashboard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/contexts/AppContext.tsx",
+          "frontend/src/pages/OnboardingSurvey.tsx",
+          "frontend/src/pages/Dashboard.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ProgressTimeline.tsx",
+    "frontend/src/contexts/AppContext.tsx",
+    "frontend/src/pages/Dashboard.tsx",
+    "frontend/src/pages/OnboardingSurvey.tsx",
+    "frontend/src/types/index.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

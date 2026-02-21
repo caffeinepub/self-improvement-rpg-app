@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Self-Improvement RPG App - A gamified habit tracker where users level up their real-life character by completing daily quests, building streaks, and progressing through 10+ ranks (Novice to Transcendent). Features XP progression, skill trees across categories like Fitness and Mind, boss challenges, achievements, and an animated level-up experience. Now includes an RPG-themed onboarding survey that collects user preferences (name, goals, activity level, mental wellness, preferred task time, difficulty) and dynamically generates 6-10 personalized premade daily quests based on their answers. Built with React and Tailwind CSS using localStorage for persistence.",
+  "architectural_notes": [
+    "React SPA with Tailwind CSS for styling",
+    "localStorage for all user data persistence (no backend)",
+    "Tab-based navigation with 5 main sections",
+    "XP and rank progression system with thresholds",
+    "Independent skill level tracking per category",
+    "Onboarding survey blocks app access until completed",
+    "Quest generation algorithm maps survey responses to quest templates",
+    "User profile stores survey responses for future quest customization"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-rank-progression-system-with-10-distinct-ranks-novice-apprentice-journeyman-adept-expert-master-grandmaster-legend-mythic-transcendent-each-rank-must-have-a-unique-badge-icon-and-unlock-at-specific-xp-thresholds-display-the-current-rank-prominently-on-the-dashboard-with-visual-progression",
+      "title": "Implement a rank progression system with 10 distinct ranks (Novice, Apprentice, Journeyman, Adept, Expert, Master, Grandmaster, Legend, Mythic, Transcendent). Each rank must have a unique badge icon and unlock at specific XP thresholds. Display the current rank prominently on the dashboard with visual progression.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-daily-quest-system-where-users-can-add-edit-and-complete-custom-habits-e-g-drink-8-glasses-of-water-exercise-for-30-mins-each-completed-quest-awards-xp-store-quest-data-in-localstorage",
+      "title": "Create a daily quest system where users can add, edit, and complete custom habits (e.g., 'drink 8 glasses of water', 'exercise for 30 mins'). Each completed quest awards XP. Store quest data in localStorage.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-streak-tracking-system-that-counts-consecutive-days-of-quest-completion-apply-an-xp-multiplier-based-on-streak-length-e-g-2x-for-7-day-streak-3x-for-30-day-streak-display-current-streak-prominently-on-the-dashboard",
+      "title": "Implement a streak tracking system that counts consecutive days of quest completion. Apply an XP multiplier based on streak length (e.g., 2x for 7-day streak, 3x for 30-day streak). Display current streak prominently on the dashboard.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-independent-skill-trees-for-five-categories-fitness-mind-social-finance-and-creativity-each-skill-tree-levels-up-independently-based-on-xp-earned-from-category-specific-quests-display-visual-skill-trees-in-the-skills-tab",
+      "title": "Build independent skill trees for five categories: Fitness, Mind, Social, Finance, and Creativity. Each skill tree levels up independently based on XP earned from category-specific quests. Display visual skill trees in the Skills tab.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-boss-challenge-system-for-weekly-or-monthly-goals-that-award-massive-xp-bonuses-and-special-titles-upon-completion-users-can-create-track-and-complete-boss-challenges",
+      "title": "Create a boss challenge system for weekly or monthly goals that award massive XP bonuses and special titles upon completion. Users can create, track, and complete boss challenges.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-achievement-and-badge-system-that-awards-badges-for-reaching-milestones-such-as-7-day-streak-first-workout-logged-level-10-reached-display-earned-badges-on-the-profile-page",
+      "title": "Implement an achievement and badge system that awards badges for reaching milestones such as '7-day streak', 'First workout logged', 'Level 10 reached'. Display earned badges on the Profile page.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-dashboard-tab-that-displays-the-xp-progress-bar-current-rank-daily-quests-list-and-streak-counter-this-is-the-primary-landing-page-of-the-app",
+      "title": "Build a Dashboard tab that displays the XP progress bar, current rank, daily quests list, and streak counter. This is the primary landing page of the app.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-skills-tab-that-displays-visual-skill-trees-for-each-category-fitness-mind-social-finance-creativity-with-current-levels-and-progress",
+      "title": "Build a Skills tab that displays visual skill trees for each category (Fitness, Mind, Social, Finance, Creativity) with current levels and progress.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-quests-tab-where-users-can-add-new-quests-edit-existing-quests-assign-them-to-skill-categories-set-them-as-daily-or-weekly-and-mark-them-as-complete",
+      "title": "Build a Quests tab where users can add new quests, edit existing quests, assign them to skill categories, set them as daily or weekly, and mark them as complete.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-profile-tab-displaying-a-character-sheet-with-total-xp-current-rank-all-skill-levels-equipped-badges-earned-achievements-and-overall-statistics",
+      "title": "Build a Profile tab displaying a character sheet with total XP, current rank, all skill levels, equipped badges, earned achievements, and overall statistics.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-leaderboard-tab-that-displays-personal-progress-history-milestones-achieved-over-time-and-historical-statistics-even-though-this-is-a-solo-experience",
+      "title": "Build a Leaderboard tab that displays personal progress history, milestones achieved over time, and historical statistics even though this is a solo experience.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-animated-level-up-screen-that-triggers-when-the-user-reaches-a-new-rank-the-animation-should-be-celebratory-and-display-the-new-rank-badge-with-visual-effects",
+      "title": "Implement an animated level-up screen that triggers when the user reaches a new rank. The animation should be celebratory and display the new rank badge with visual effects.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-dark-rpg-style-ui-theme-with-glowing-accents-dramatic-shadows-and-progress-bars-that-feel-game-like-apply-consistent-visual-styling-across-all-tabs-with-a-fantasy-medieval-aesthetic-that-enhances-the-gamification-experience",
+      "title": "Design a dark RPG-style UI theme with glowing accents, dramatic shadows, and progress bars that feel game-like. Apply consistent visual styling across all tabs with a fantasy/medieval aesthetic that enhances the gamification experience.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-tab-based-navigation-to-switch-between-dashboard-skills-quests-profile-and-leaderboard-the-app-should-be-a-single-page-application-with-all-user-data-persisted-in-localstorage",
+      "title": "Implement tab-based navigation to switch between Dashboard, Skills, Quests, Profile, and Leaderboard. The app should be a single-page application with all user data persisted in localStorage.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-rpg-themed-onboarding-survey-screen-styled-as-a-character-creation-screen-that-appears-before-the-user-enters-the-main-app-for-the-first-time-the-survey-must-collect-the-following-data-1-character-name-2-main-goals-as-multi-select-options-fitness-mental-health-productivity-finance-social-life-learning-nutrition-sleep-3-current-activity-level-sedentary-lightly-active-moderately-active-very-active-4-mental-wellness-rating-struggling-getting-by-pretty-good-thriving-5-preferred-task-completion-time-morning-afternoon-evening-no-preference-6-quest-difficulty-preference-easy-mode-balanced-hard-mode-store-all-survey-responses-in-the-user-s-state",
+      "title": "Create an RPG-themed onboarding survey screen styled as a 'character creation screen' that appears before the user enters the main app for the first time. The survey must collect the following data: (1) character name, (2) main goals as multi-select options (Fitness, Mental Health, Productivity, Finance, Social Life, Learning, Nutrition, Sleep), (3) current activity level (Sedentary / Lightly Active / Moderately Active / Very Active), (4) mental wellness rating (Struggling / Getting By / Pretty Good / Thriving), (5) preferred task completion time (Morning / Afternoon / Evening / No Preference), (6) quest difficulty preference (Easy Mode / Balanced / Hard Mode). Store all survey responses in the user's state.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-quest-generation-algorithm-that-dynamically-creates-6-10-personalized-daily-quests-based-on-the-onboarding-survey-responses-the-algorithm-must-consider-the-user-s-selected-goal-categories-and-difficulty-level-to-generate-appropriate-quests-example-mappings-fitness-hard-mode-generates-complete-a-45-minute-workout-do-50-pushups-walk-10-000-steps-mental-health-easy-mode-generates-meditate-for-5-minutes-write-3-things-you-re-grateful-for-sleep-category-generates-be-in-bed-by-11pm-no-screens-30-minutes-before-bed-nutrition-generates-drink-8-glasses-of-water-eat-a-home-cooked-meal-today-finance-generates-track-your-spending-today-skip-one-unnecessary-purchase-learning-generates-read-for-20-minutes-watch-one-educational-video-social-life-generates-reach-out-to-a-friend-or-family-member-do-one-kind-act-today-productivity-generates-complete-your-top-3-priorities-each-generated-quest-must-have-an-appropriate-xp-value-based-on-difficulty-level-easy-mode-10-20-xp-balanced-20-40-xp-hard-mode-40-60-xp-and-be-assigned-to-the-corresponding-skill-category",
+      "title": "Implement a quest generation algorithm that dynamically creates 6-10 personalized daily quests based on the onboarding survey responses. The algorithm must consider the user's selected goal categories and difficulty level to generate appropriate quests. Example mappings: Fitness + Hard Mode generates 'Complete a 45-minute workout', 'Do 50 pushups', 'Walk 10,000 steps'; Mental Health + Easy Mode generates 'Meditate for 5 minutes', 'Write 3 things you're grateful for'; Sleep category generates 'Be in bed by 11PM', 'No screens 30 minutes before bed'; Nutrition generates 'Drink 8 glasses of water', 'Eat a home-cooked meal today'; Finance generates 'Track your spending today', 'Skip one unnecessary purchase'; Learning generates 'Read for 20 minutes', 'Watch one educational video'; Social Life generates 'Reach out to a friend or family member', 'Do one kind act today'; Productivity generates 'Complete your top 3 priorities'. Each generated quest must have an appropriate XP value based on difficulty level (Easy Mode: 10-20 XP, Balanced: 20-40 XP, Hard Mode: 40-60 XP) and be assigned to the corresponding skill category.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-quest-template-database-that-contains-predefined-quest-options-for-each-goal-category-fitness-mental-health-productivity-finance-social-life-learning-nutrition-sleep-at-three-difficulty-tiers-easy-balanced-hard-each-template-must-include-quest-title-description-base-xp-value-and-skill-category-mapping-the-quest-generation-algorithm-must-select-from-these-templates-based-on-user-survey-responses",
+      "title": "Create a quest template database that contains predefined quest options for each goal category (Fitness, Mental Health, Productivity, Finance, Social Life, Learning, Nutrition, Sleep) at three difficulty tiers (Easy, Balanced, Hard). Each template must include quest title, description, base XP value, and skill category mapping. The quest generation algorithm must select from these templates based on user survey responses.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-appcontext-to-include-onboarding-state-management-with-fields-for-storing-survey-responses-charactername-selectedgoals-activitylevel-mentalwellness-preferredtime-difficultymode-and-a-boolean-flag-indicating-whether-onboarding-has-been-completed-provide-methods-to-save-survey-responses-and-mark-onboarding-as-complete",
+      "title": "Update the AppContext to include onboarding state management with fields for storing survey responses (characterName, selectedGoals, activityLevel, mentalWellness, preferredTime, difficultyMode) and a boolean flag indicating whether onboarding has been completed. Provide methods to save survey responses and mark onboarding as complete.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-modify-app-tsx-to-conditionally-render-the-onboarding-survey-screen-when-the-user-first-launches-the-app-when-onboardingcompleted-is-false-after-the-user-completes-the-survey-generate-their-personalized-quests-and-then-redirect-them-to-the-dashboard-the-onboarding-screen-should-take-over-the-entire-viewport-and-prevent-access-to-the-main-app-until-completed",
+      "title": "Modify App.tsx to conditionally render the onboarding survey screen when the user first launches the app (when onboardingCompleted is false). After the user completes the survey, generate their personalized quests and then redirect them to the Dashboard. The onboarding screen should take over the entire viewport and prevent access to the main app until completed.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-style-the-onboarding-survey-with-rpg-character-creation-aesthetics-including-medieval-themed-form-controls-glowing-borders-for-active-inputs-dramatic-background-styling-consistent-with-the-existing-dark-fantasy-theme-and-a-begin-your-journey-or-similar-call-to-action-button-to-submit-the-survey-include-visual-feedback-for-form-validation-and-completion-progress",
+      "title": "Style the onboarding survey with RPG character creation aesthetics including medieval-themed form controls, glowing borders for active inputs, dramatic background styling consistent with the existing dark fantasy theme, and a 'Begin Your Journey' or similar call-to-action button to submit the survey. Include visual feedback for form validation and completion progress.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-test-all-core-application-functionality-on-mainnet-including-onboarding-survey-quest-creation-completion-streak-tracking-skill-progression-boss-challenges-and-achievement-unlocking-to-ensure-localstorage-persistence-works-correctly-in-production",
+      "title": "Test all core application functionality on mainnet including onboarding survey, quest creation/completion, streak tracking, skill progression, boss challenges, and achievement unlocking to ensure localStorage persistence works correctly in production",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Implement rank progression system with 10+ ranks and unique badges",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create daily quest system with XP rewards",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Build streak tracking system with XP multipliers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement skill trees for Fitness, Mind, Social, Finance, and Creativity categories",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add boss challenges with weekly/monthly goals and special rewards",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create achievement and badge system for milestones",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Build Dashboard tab with XP bar, rank, daily quests, and streak counter",
+      "reqIds": [
+        "AR-1",
+        "AR-2",
+        "AR-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Build Skills tab with visual skill trees",
+      "reqIds": [
+        "AR-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Build Quests tab for adding/editing/completing goals",
+      "reqIds": [
+        "AR-2",
+        "AR-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Build Profile tab showing character stats, badges, and achievements",
+      "reqIds": [
+        "AR-1",
+        "AR-6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Build Leaderboard tab with personal progress history",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Implement animated level-up screen for rank progression",
+      "reqIds": [
+        "AR-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Design dark RPG-style UI with glowing accents and progress bars",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Create RPG-themed onboarding survey with character creation screen collecting name, goals, activity level, mental wellness, task timing preference, and difficulty mode",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Implement dynamic quest generation system that creates 6-10 personalized daily quests based on onboarding survey responses",
+      "reqIds": [
+        "AR-14"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Configure the project for mainnet deployment by ensuring dfx.json contains production-ready canister configurations with mainnet network settings",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Build and deploy the backend canister (main.mo) to the Internet Computer mainnet with proper cycles funding",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Build the frontend application in production mode with environment variables pointing to mainnet backend canister, then deploy the optimized static assets to the Internet Computer frontend canister",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Verify Internet Identity integration works correctly on mainnet by testing authentication flow with production Internet Identity canister",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Self-Improvement RPG App",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
